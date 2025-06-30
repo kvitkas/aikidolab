@@ -1,0 +1,454 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /**
+   * Aikido Labs Premium Theme - Cherry Blossom Edition
+   *  Cherry blossom aesthetics created by Reza Ahan
+   */
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+
+    --radius: 0.5rem;
+
+    /* Cherry Blossom Premium Colors */
+    --cherry-pink: 345 82% 75%;
+    --cherry-pink-foreground: 0 0% 9%;
+    --cherry-pink-light: 345 82% 85%;
+    --cherry-pink-dark: 345 82% 65%;
+
+    --cherry-gradient-start: 345 82% 75%;
+    --cherry-gradient-end: 330 81% 60%;
+
+    --aikido-black: 0 0% 3.9%;
+    --aikido-white: 0 0% 98%;
+    --aikido-gray: 0 0% 45.1%;
+    --aikido-light-gray: 0 0% 71%;
+
+    /* Premium accents */
+    --premium-gold: 43 74% 66%;
+    --premium-silver: 210 40% 90%;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+
+    /* Dark mode Cherry Blossom colors */
+    --cherry-pink: 345 82% 75%;
+    --cherry-pink-foreground: 0 0% 9%;
+    --cherry-pink-light: 345 82% 85%;
+    --cherry-pink-dark: 345 82% 65%;
+
+    --cherry-gradient-start: 345 82% 75%;
+    --cherry-gradient-end: 330 81% 60%;
+
+    --aikido-black: 0 0% 98%;
+    --aikido-white: 0 0% 3.9%;
+    --aikido-gray: 0 0% 63.9%;
+    --aikido-light-gray: 0 0% 71%;
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family:
+      "Inter",
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      "Roboto",
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1.5;
+  }
+
+  /* Default to dark mode */
+  html {
+    @apply dark;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-bold tracking-tight;
+    font-family: "Inter", sans-serif;
+  }
+
+  .font-mono {
+    font-family: "JetBrains Mono", "Fira Code", monospace;
+  }
+
+  /* Premium scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-muted;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(
+      180deg,
+      hsl(var(--cherry-pink)) 0%,
+      hsl(var(--cherry-pink-dark)) 100%
+    );
+    @apply rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--cherry-pink-dark));
+  }
+}
+
+@layer components {
+  .gradient-cherry {
+    background: linear-gradient(
+      135deg,
+      hsl(var(--cherry-gradient-start)) 0%,
+      hsl(var(--cherry-gradient-end)) 100%
+    );
+  }
+
+  .gradient-text-cherry {
+    background: linear-gradient(
+      135deg,
+      hsl(var(--cherry-gradient-start)) 0%,
+      hsl(var(--cherry-gradient-end)) 100%
+    );
+    @apply bg-clip-text text-transparent;
+  }
+
+  .gradient-cherry-soft {
+    background: linear-gradient(
+      135deg,
+      hsl(var(--cherry-gradient-start) / 0.1) 0%,
+      hsl(var(--cherry-gradient-end) / 0.05) 100%
+    );
+  }
+
+  .gradient-premium {
+    background: linear-gradient(
+      145deg,
+      hsl(var(--background)) 0%,
+      hsl(var(--muted) / 0.5) 50%,
+      hsl(var(--background)) 100%
+    );
+  }
+
+  .glass-card {
+    @apply backdrop-blur-xl bg-background/80 border border-border/50 shadow-2xl;
+  }
+
+  .premium-card {
+    @apply bg-background border border-border shadow-lg transition-all duration-500 ease-out;
+    background: linear-gradient(
+      145deg,
+      hsl(var(--background)) 0%,
+      hsl(var(--muted)) 100%
+    );
+  }
+
+  .premium-card:hover {
+    @apply shadow-2xl -translate-y-2;
+    box-shadow:
+      0 25px 50px -12px rgba(0, 0, 0, 0.25),
+      0 0 0 1px hsl(var(--cherry-pink) / 0.1);
+  }
+
+  .fade-in {
+    @apply opacity-0 translate-y-8;
+    animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .fade-in-delay-1 {
+    @apply fade-in;
+    animation-delay: 0.2s;
+  }
+
+  .fade-in-delay-2 {
+    @apply fade-in;
+    animation-delay: 0.4s;
+  }
+
+  .fade-in-delay-3 {
+    @apply fade-in;
+    animation-delay: 0.6s;
+  }
+
+  .fade-in-delay-4 {
+    @apply fade-in;
+    animation-delay: 0.8s;
+  }
+
+  .slide-in-left {
+    @apply opacity-0 -translate-x-8;
+    animation: slideInLeft 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .slide-in-right {
+    @apply opacity-0 translate-x-8;
+    animation: slideInRight 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .cherry-blossom-spin {
+    animation: cherryBlossomSpin 8s linear infinite;
+    transform-origin: center;
+  }
+
+  .cherry-blossom-gentle-spin {
+    animation: cherryBlossomGentleSpin 15s linear infinite;
+    transform-origin: center;
+  }
+
+  .premium-button {
+    @apply relative overflow-hidden transition-all duration-300 ease-out;
+    background: linear-gradient(
+      135deg,
+      hsl(var(--cherry-gradient-start)) 0%,
+      hsl(var(--cherry-gradient-end)) 100%
+    );
+  }
+
+  .premium-button::before {
+    content: "";
+    @apply absolute inset-0 opacity-0 transition-opacity duration-300;
+    background: linear-gradient(
+      135deg,
+      hsl(var(--cherry-gradient-end)) 0%,
+      hsl(var(--cherry-gradient-start)) 100%
+    );
+  }
+
+  .premium-button:hover::before {
+    @apply opacity-100;
+  }
+
+  .premium-button:hover {
+    @apply -translate-y-1 shadow-2xl;
+    box-shadow: 0 20px 40px -12px hsl(var(--cherry-pink) / 0.4);
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .superpower-grid {
+    background:
+      linear-gradient(90deg, hsl(var(--border)) 1px, transparent 1px),
+      linear-gradient(180deg, hsl(var(--border)) 1px, transparent 1px);
+    background-size: 4rem 4rem;
+    mask-image: radial-gradient(
+      ellipse 80% 50% at 50% 0%,
+      black 70%,
+      transparent 110%
+    );
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes cherryBlossomSpin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes cherryBlossomGentleSpin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(5deg);
+  }
+}
+
+@keyframes floatReverse {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-15px) rotate(-3deg);
+  }
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -468px 0;
+  }
+  100% {
+    background-position: 468px 0;
+  }
+}
+
+.float-animation {
+  animation: float 6s ease-in-out infinite;
+}
+
+.float-animation-reverse {
+  animation: floatReverse 8s ease-in-out infinite;
+}
+
+.animate-scroll {
+  animation: scroll 40s linear infinite;
+}
+
+.animate-pulse-soft {
+  animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    hsl(var(--cherry-pink) / 0.1),
+    transparent
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
