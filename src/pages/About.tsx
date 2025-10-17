@@ -6,108 +6,97 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import {
-  Brain,
-  Target,
-  Award,
-  Users,
-  Globe,
-  Lightbulb,
-  Heart,
-  Zap,
   ArrowRight,
-  MapPin,
-  Calendar,
-  Trophy,
-  Star,
+  Building,
   GraduationCap,
+  Heart,
+  Lightbulb,
   Microscope,
   BookOpen,
   Rocket,
-  Building,
-  Clock,
-  TrendingUp,
   Sparkles,
-  Shield,
-  Layers,
+  Users,
+  Zap,
 } from "lucide-react";
 
 const About = () => {
   const [cherryBlossomEnabled, setCherryBlossomEnabled] = useState(true);
   const teamMembers = [
     {
-      name: "Nolan Au",
-      role: "Research Team Member",
-      specialization: "Neurobiology & AI",
-      education: "University of California - San Diego",
+      name: "Sasha Nguyen",
+      role: "Bioengineering major",
+      specialization: "Neuroscience wet lab",
+      education: "UC San Diego",
       experience: "Undergraduate",
-      avatar: "NA",
-      bio: "Exploring the intersection of neurobiology and artificial intelligence.",
-      skills: ["xxx", "xxx", "xxx"],
-      focus: "TBA",
+      avatar: "SN",
+      bio: "Matched with a neurodegeneration lab, funded her first reagents, and is drafting a poster within eight weeks.",
+      skills: ["wet lab", "analysis", "presentation"],
+      focus: "Neurodegeneration",
     },
     {
-      name: "Alejandro J. De Leon",
-      role: "Research Team Member",
-      specialization: "AI Research",
-      education: "University of California - San Diego",
+      name: "Diego Morales",
+      role: "Cognitive science major",
+      specialization: "Human-computer interaction",
+      education: "UC San Diego",
       experience: "Undergraduate",
-      avatar: "AD",
-      bio: "Bringing diverse perspectives to AI research and development initiatives.",
-      skills: ["xxx", "xxx", "xxx"],
-      focus: "TBA",
+      avatar: "DM",
+      bio: "Used our questionnaire to scope an experiment, earned cloud credits, and submitted a preprint with his mentor.",
+      skills: ["python", "statistics", "UX studies"],
+      focus: "HCI",
     },
     {
-      name: "Neeraj Venna",
-      role: "Research Team Member",
-      specialization: "Neurobiology & ML",
-      education: "University of California - San Diego",
+      name: "Priya Kapoor",
+      role: "Computer science major",
+      specialization: "AI for health",
+      education: "UC San Diego",
       experience: "Undergraduate",
-      avatar: "NV",
-      bio: "Bridging the gap between biological intelligence and artificial systems.",
-      skills: ["xxx", "xxx", "xxx"],
-      focus: "TBA",
-    },
-    {
-      name: "Krish Desai",
-      role: "Research Team Member",
-      specialization: "Data Science & AI",
-      education: "University of California - San Diego",
-      experience: "Undergraduate",
-      avatar: "KD",
-      bio: "Applying data science methodologies to solve complex AI research challenges.",
-      skills: ["xxx", "xxx", "xxx"],
-      focus: "TBA",
+      avatar: "PK",
+      bio: "Joined Aikido Labs to turn a class project into a real study with faculty support and a micro-grant for datasets.",
+      skills: ["machine learning", "data wrangling", "writing"],
+      focus: "ML for healthcare",
     },
   ];
 
   const companyStats = [
     {
       icon: Users,
-      value: "3+",
-      label: "Research Team",
-      description: "Dedicated researchers",
+      value: "Matchmaking",
+      label: "Faculty introductions",
+      description:
+        "We connect you with mentors based on your major, year, and interests. No cold emails required.",
       color: "text-cherry-pink",
     },
     {
-      icon: Calendar,
-      value: "2025",
-      label: "Founded",
-      description: "Year established",
+      icon: Zap,
+      value: "Micro-grants",
+      label: "$100–$1,000 support",
+      description:
+        "Cover software, datasets, consumables, or cloud credits so you can start the moment you’re matched.",
       color: "text-blue-500",
     },
     {
-      icon: MapPin,
-      value: "San Diego",
-      label: "Headquarters",
-      description: "Research hub location",
+      icon: Lightbulb,
+      value: "Guidance",
+      label: "Idea → execution",
+      description:
+        "Weekly checklists take you from topic selection to methods, analysis, and clear next steps.",
+      color: "text-purple-500",
+    },
+    {
+      icon: BookOpen,
+      value: "Publishing",
+      label: "Posters & preprints",
+      description:
+        "Templates, editing support, and submission nudges to help you share your results.",
       color: "text-green-500",
     },
     {
-      icon: Target,
-      value: "20+",
-      label: "Hour Reduction",
-      description: "Manual Labor Cut",
-      color: "text-purple-500",
+      icon: Heart,
+      value: "Community",
+      label: "Builder cohort",
+      description:
+        "Join peers who swap feedback, co-work, and celebrate small wins every week.",
+      color: "text-orange-500",
     },
   ];
 
@@ -116,64 +105,65 @@ const About = () => {
       year: "2025",
       quarter: "Q1",
       title: "Aikido Labs Founded",
-      description: "Established AI research lab",
+      description: "Started by undergrads to make research accessible at UCSD.",
       icon: Rocket,
       status: "Completed",
     },
     {
       year: "2025",
       quarter: "Q2",
-      title: "Research Framework Launch",
-      description: "Deployed Research Framework",
+      title: "First mentor cohorts",
+      description: "Launched structured mentor matching plus the student questionnaire.",
       icon: Microscope,
       status: "In Progress",
     },
     {
       year: "2025",
       quarter: "Q3",
-      title: "First Publication Target",
+      title: "Micro-grant expansion",
       description:
-        "Aiming for breakthrough research publication in top-tier AI journal",
+        "Rolling micro-grants fund starter costs so every student can begin experiments fast.",
       icon: BookOpen,
       status: "Planned",
     },
     {
       year: "2025",
       quarter: "Q4",
-      title: "20+ Hour Labor Reduction",
-      description: "Deliver guaranteed 20+ hour manual labor reduction",
+      title: "Publish-ready pipeline",
+      description:
+        "Posters, preprints, and submission support baked into every cohort’s checklist.",
       icon: Zap,
-      status: "GUARANTEED",
+      status: "Planned",
     },
   ];
 
   const coreValues = [
     {
       icon: Brain,
-      title: "Research Excellence",
+      title: "Student-first guidance",
       description:
-        "Advancing the frontiers of AI through rigorous scientific methodology and innovative thinking.",
+        "Clear, upbeat check-ins that demystify research and keep momentum high.",
       gradient: "from-blue-500 to-purple-500",
     },
     {
       icon: Heart,
-      title: "Ethical Innovation",
+      title: "Belonging",
       description:
-        "Developing AI systems that prioritize human welfare, privacy, and societal benefit.",
+        "You join a welcoming cohort that shares feedback, resources, and encouragement.",
       gradient: "from-red-500 to-pink-500",
     },
     {
       icon: Globe,
-      title: "Global Impact",
+      title: "Access for everyone",
       description:
-        "Creating solutions that transcend boundaries and address challenges across cultures and industries.",
+        "We remove gatekeeping with warm introductions, micro-grants, and quick answers.",
       gradient: "from-green-500 to-teal-500",
     },
     {
       icon: Zap,
-      title: "Rapid Innovation",
+      title: "Ship small wins",
       description:
-        "Translating research breakthroughs into practical solutions with unprecedented speed.",
+        "Projects move in 4–8 week cycles so you can show progress and build confidence.",
       gradient: "from-yellow-500 to-orange-500",
     },
   ];
@@ -186,8 +176,6 @@ const About = () => {
         return "bg-blue-500/10 text-blue-500 border-blue-500/20";
       case "Planned":
         return "bg-purple-500/10 text-purple-500 border-purple-500/20";
-      case "Target":
-        return "bg-orange-500/10 text-orange-500 border-orange-500/20";
       default:
         return "bg-gray-500/10 text-gray-500 border-gray-500/20";
     }
@@ -211,34 +199,31 @@ const About = () => {
               <div className="lg:col-span-3">
                 <Badge className="mb-6 bg-cherry-pink/10 text-cherry-pink border-cherry-pink/20 font-mono">
                   <Building className="w-4 h-4 mr-2" />
-                  Our Story
+                  What We Do
                 </Badge>
                 <h1 className="text-6xl lg:text-8xl font-black text-foreground mb-8 tracking-tighter leading-none">
-                  BUILDING
-                  <span className="block gradient-text-cherry">THE FUTURE</span>
-                  <span className="block text-4xl lg:text-5xl text-muted-foreground mt-4">
-                    of artificial intelligence
+                  What we do
+                  <span className="block gradient-text-cherry">
+                    We help undergrads do real research—fast.
                   </span>
                 </h1>
                 <p className="text-xl text-muted-foreground leading-relaxed mb-12 max-w-2xl">
-                  Based in San Diego, we're a cutting-edge AI research lab
-                  dedicated to transforming businesses through intelligent
-                  automation and breakthrough research.
+                  We make undergraduate research radically accessible by matching students to mentors, funding micro-grants, and guiding them from idea → execution → publication.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Button
-                    onClick={() => (window.location.href = "/research")}
+                    onClick={() => (window.location.href = "/booking")}
                     className="premium-button text-white px-8 py-4 font-bold rounded-xl font-mono"
                   >
                     <Microscope className="w-5 h-5 mr-2" />
-                    Explore Research
+                    Apply for Research
                   </Button>
                   <Button
-                    onClick={() => (window.location.href = "/booking")}
+                    onClick={() => (window.location.href = "/policy")}
                     variant="outline"
                     className="px-8 py-4 font-bold rounded-xl border-2 font-mono"
                   >
-                    Schedule Consultation
+                    Get Matched to a Professor
                     <ArrowRight className="w-5 h-5 ml-2" />
                   </Button>
                 </div>
@@ -281,11 +266,10 @@ const About = () => {
           <div className="container mx-auto px-4 sm:px-6">
             <div className="text-center mb-16">
               <h2 className="text-5xl font-black text-foreground mb-6 font-mono tracking-tight">
-                Our Core Values
+                How we make research accessible
               </h2>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                The principles that guide our research and define our approach
-                to AI innovation
+                Simple structure, human mentorship, and a welcoming community keep every project moving.
               </p>
             </div>
 
@@ -329,10 +313,10 @@ const About = () => {
           <div className="container mx-auto px-4 sm:px-6">
             <div className="text-center mb-16">
               <h2 className="text-5xl font-black text-foreground mb-6 font-mono tracking-tight">
-                Meet Our Team
+                Student stories
               </h2>
               <p className="text-xl text-muted-foreground">
-                Passionate researchers from UC San Diego driving AI innovation
+                Undergrads who joined Aikido Labs and shipped real projects with mentor support.
               </p>
             </div>
 
@@ -380,10 +364,10 @@ const About = () => {
           <div className="container mx-auto px-4 sm:px-6">
             <div className="text-center mb-16">
               <h2 className="text-5xl font-black text-foreground mb-6 font-mono tracking-tight">
-                Our Journey
+                Our builder timeline
               </h2>
               <p className="text-xl text-muted-foreground">
-                Key milestones in building the future of AI research
+                Milestones that keep undergrads moving from idea to publication.
               </p>
             </div>
 
@@ -443,11 +427,10 @@ const About = () => {
                   <Sparkles className="w-8 h-8 text-cherry-pink" />
                 </div>
                 <h3 className="text-4xl font-black text-foreground mb-6 font-mono tracking-tight">
-                  Ready to Transform Your Business?
+                  Ready to start your research project?
                 </h3>
                 <p className="text-lg text-muted-foreground mb-8 font-medium leading-relaxed max-w-2xl mx-auto">
-                  We're focused on advancing AI research and creating innovative
-                  solutions that transform how businesses operate.
+                  Apply for the next Aikido Labs cohort, get matched to mentors, and launch a project you can publish.
                 </p>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
                   <Button
@@ -455,7 +438,7 @@ const About = () => {
                     className="premium-button text-white px-8 py-4 text-lg font-bold rounded-xl font-mono tracking-wide"
                   >
                     <span className="relative z-10 flex items-center">
-                      Schedule Consultation
+                      Apply for Research
                       <ArrowRight className="ml-2 w-5 h-5" />
                     </span>
                   </Button>

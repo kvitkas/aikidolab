@@ -1,0 +1,11 @@
+{
+  "buttons": ["Apply", "Start", "Continue", "Save", "Submit", "Request Intro", "Request Funding", "See Matches"],
+  "emptyStates": [
+    "No matches yet—try selecting one more topic or broaden your interests.",
+    "You can start without an idea. We’ll help you find one."
+  ],
+  "errorStates": [
+    "Hmm, that didn’t save. Try again?",
+    "One field needs attention."
+  ]
+}

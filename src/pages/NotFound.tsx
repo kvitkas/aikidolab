@@ -42,8 +42,7 @@ const NotFound = () => {
               Page Not Found
             </h2>
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-              Looks like you've ventured into uncharted AI territory. The page
-              you're looking for doesn't exist, but our innovation continues.
+              Looks like you wandered off the research path. The page you’re looking for doesn’t exist, but matches, micro-grants, and mentors are only a click away.
             </p>
 
             {/* Action Buttons */}
@@ -81,8 +80,7 @@ const NotFound = () => {
                 Need assistance?
               </h3>
               <p className="text-sm text-muted-foreground">
-                If you believe this is an error, please contact our support team
-                or explore our AI solutions on the homepage.
+                If you believe this is an error, email hello@aikidolab.org and we’ll point you to the right resource.
               </p>
             </div>
           </div>

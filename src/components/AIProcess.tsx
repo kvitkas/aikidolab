@@ -6,9 +6,7 @@ import {
   Brain,
   Settings,
   LineChart,
-  MessageSquare,
   ArrowRight,
-  CheckCircle,
   Zap,
   Target,
   Users,
@@ -19,23 +17,23 @@ interface AIProcessProps {
 }
 
 export default function AIProcess({ className }: AIProcessProps) {
-  // Define realistic process steps with practical outcomes
+  // Simple path students follow with Aikido Labs
   const processSteps = [
     {
       step: "01",
       icon: Calendar,
-      title: "Initial Strategy Session",
+      title: "Start with the questionnaire",
       description:
-        "Schedule a comprehensive consultation with our research team to understand your business needs and identify practical AI implementation opportunities.",
+        "Share your major, year, and curiosities. We map them to research areas you can pursue right now.",
       visual: (
         <div className="w-full h-64 bg-gradient-cherry-soft rounded-2xl p-6 flex items-center justify-center">
           <div className="text-center">
             <Calendar className="w-16 h-16 text-cherry-pink mx-auto mb-4" />
             <div className="font-bold text-foreground font-mono text-lg">
-              Strategy Session
+              10-minute kickoff
             </div>
             <div className="text-sm text-aikido-gray mt-2">
-              30-minute deep dive
+              Questionnaire + quick call
             </div>
           </div>
         </div>
@@ -44,25 +42,25 @@ export default function AIProcess({ className }: AIProcessProps) {
     {
       step: "02",
       icon: Brain,
-      title: "TBD",
+      title: "Match with mentors and funding",
       description:
-        "Coming soon - we're developing new processes to better serve our clients.",
+        "We introduce you to aligned faculty and offer $100–$1,000 micro-grants so you can start gathering data immediately.",
       visual: (
         <div className="w-full h-64 bg-gradient-premium rounded-2xl p-6 border border-border">
           <div className="flex justify-between items-start mb-4">
             <div className="text-sm font-bold text-foreground font-mono">
-              IN DEVELOPMENT
+              Warm introductions
             </div>
             <div className="w-3 h-3 bg-cherry-pink rounded-full animate-pulse" />
           </div>
           <div className="space-y-4">
             <div className="text-center">
-              <Brain className="w-16 h-16 text-cherry-pink mx-auto mb-4" />
+              <Users className="w-16 h-16 text-cherry-pink mx-auto mb-4" />
               <div className="text-lg font-bold text-foreground font-mono">
-                Process Step #2
+                Mentor + micro-grant
               </div>
               <div className="text-sm text-aikido-gray mt-2">
-                To Be Determined
+                Supplies, datasets, cloud credits
               </div>
             </div>
           </div>
@@ -72,25 +70,25 @@ export default function AIProcess({ className }: AIProcessProps) {
     {
       step: "03",
       icon: Settings,
-      title: "TBD",
+      title: "Ship results and share them",
       description:
-        "Coming soon - we're developing new processes to better serve our clients.",
+        "Follow our week-by-week checklist from idea → literature → methods → results. End with a poster, preprint, or submission.",
       visual: (
         <div className="w-full h-64 bg-gradient-premium rounded-2xl p-6 border border-border">
           <div className="flex justify-between items-start mb-4">
             <div className="text-sm font-bold text-foreground font-mono">
-              IN DEVELOPMENT
+              Guided execution
             </div>
             <div className="w-3 h-3 bg-cherry-pink rounded-full animate-pulse" />
           </div>
           <div className="space-y-4">
             <div className="text-center">
-              <Settings className="w-16 h-16 text-cherry-pink mx-auto mb-4" />
+              <LineChart className="w-16 h-16 text-cherry-pink mx-auto mb-4" />
               <div className="text-lg font-bold text-foreground font-mono">
-                Process Step #3
+                Publish-ready outputs
               </div>
               <div className="text-sm text-aikido-gray mt-2">
-                To Be Determined
+                Posters, preprints, submissions
               </div>
             </div>
           </div>
@@ -117,16 +115,15 @@ export default function AIProcess({ className }: AIProcessProps) {
         <div className="text-center max-w-4xl mx-auto mb-16 lg:mb-20">
           <div className="inline-flex items-center px-4 py-2 rounded-full bg-cherry-pink/10 border border-cherry-pink/20 text-cherry-pink text-sm font-bold mb-6 lg:mb-8 font-mono tracking-wide">
             <Brain className="mr-2 w-4 h-4" />
-            Our Process
+            How we support you
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-black text-foreground mb-6 lg:mb-8 font-mono tracking-tighter leading-tight">
-            What to expect as an
-            <span className="block gradient-text-cherry">AIKIDO LABS</span>
-            <span className="block text-foreground">client</span>
+            What to expect once you join
+            <span className="block gradient-text-cherry">Aikido Labs</span>
+            <span className="block text-foreground">as a student researcher</span>
           </h2>
           <p className="text-lg sm:text-xl lg:text-2xl text-aikido-gray leading-relaxed font-medium px-4">
-            From initial consultation to ongoing support, our proven process
-            ensures practical AI implementation with measurable results
+            Simple steps, clear expectations, and upbeat check-ins that keep you moving.
           </p>
         </div>
 
@@ -178,7 +175,7 @@ export default function AIProcess({ className }: AIProcessProps) {
                     </Button>
                     <div className="flex items-center space-x-2 text-sm font-bold text-cherry-pink font-mono">
                       <Zap className="w-4 h-4" />
-                      <span>Professional Implementation</span>
+                      <span>Support from week one</span>
                     </div>
                   </div>
                 </div>
@@ -200,19 +197,18 @@ export default function AIProcess({ className }: AIProcessProps) {
                 <Target className="w-5 h-5 lg:w-6 lg:h-6 text-white" />
               </div>
               <h3 className="text-2xl lg:text-3xl font-black text-foreground font-mono tracking-tight text-center sm:text-left">
-                Ready to implement practical AI solutions?
+                Ready to start your research project?
               </h3>
             </div>
             <p className="text-base lg:text-lg text-aikido-gray mb-6 lg:mb-8 font-medium">
-              Join forward-thinking companies already benefiting from our
-              research-driven AI solutions
+              Apply for a cohort seat, get matched to a mentor, and start publishing earlier than you thought possible.
             </p>
             <Button
               onClick={() => scrollToSection("contact")}
               className="group premium-button text-white px-8 lg:px-10 py-4 lg:py-5 text-base lg:text-lg font-bold rounded-2xl transition-all duration-500 relative z-10 font-mono tracking-wide w-full sm:w-auto"
             >
               <span className="relative z-10 flex items-center justify-center">
-                Start Your AI Journey
+                Apply for Research
                 <ArrowRight className="ml-3 h-5 w-5 lg:h-6 lg:w-6 transition-transform duration-300 group-hover:translate-x-2" />
               </span>
             </Button>

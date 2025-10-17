@@ -87,10 +87,16 @@ export default function Navigation({
 
   // Navigation menu items
   const navItems = [
-    { label: "Home", path: "/", sectionId: undefined },
-    { label: "Research", path: "/research", sectionId: "research" },
-    { label: "Process", path: "/", sectionId: "process" },
-    { label: "About", path: "/about", sectionId: "about" },
+    { label: "What We Do", path: "/about", sectionId: undefined },
+    { label: "How Research Works", path: "/research", sectionId: undefined },
+    {
+      label: "Get Funding & Faculty Intros",
+      path: "/policy",
+      sectionId: undefined,
+    },
+    { label: "Apply", path: "/booking", sectionId: undefined },
+    { label: "Questionnaire", path: "/tos", sectionId: undefined },
+    { label: "FAQ", path: "/booking", sectionId: undefined },
   ];
 
   return (
@@ -115,13 +121,13 @@ export default function Navigation({
               <div className="relative w-8 h-8 lg:w-12 lg:h-12">
                 <img
                   src={cherryBlossomImage}
-                  alt="Aikido Labs Cherry Blossom Logo"
+                    alt="Aikido Labs cherry blossom logo"
                   className="w-full h-full object-contain opacity-90 group-hover:opacity-100 group-hover:cherry-blossom-gentle-spin transition-all duration-300"
                 />
                 <div className="absolute inset-0 opacity-30 blur-sm group-hover:cherry-blossom-gentle-spin">
                   <img
                     src={cherryBlossomImage}
-                    alt="Aikido Labs Logo Glow Effect"
+                    alt="Aikido Labs logo glow effect"
                     className="w-full h-full object-contain"
                   />
                 </div>
@@ -129,18 +135,18 @@ export default function Navigation({
 
               {/* Company Name - Responsive text sizes */}
               <div className="flex flex-col">
-                <span className="text-lg sm:text-xl lg:text-2xl font-black text-foreground group-hover:gradient-text-cherry transition-all duration-300 font-mono tracking-tight">
+                <span className="text-base sm:text-lg lg:text-xl font-semibold text-foreground group-hover:gradient-text-cherry transition-all duration-300 tracking-tight">
                   Aikido Labs
                 </span>
-                <span className="text-xs font-medium text-cherry-pink tracking-wider uppercase">
-                  AI Research Lab
+                <span className="text-[11px] sm:text-xs font-medium text-cherry-pink/80 tracking-wide">
+                  Undergrads doing real research, faster.
                 </span>
               </div>
             </button>
           </div>
 
           {/* Desktop Navigation - Hidden on mobile */}
-          <nav className="hidden lg:flex items-center space-x-8">
+          <nav className="hidden lg:flex items-center space-x-7 pr-4">
             {navItems.map((item) => (
               <button
                 key={item.label}
@@ -154,7 +160,7 @@ export default function Navigation({
           </nav>
 
           {/* Action Buttons - Responsive layout */}
-          <div className="flex items-center space-x-2 lg:space-x-4">
+          <div className="flex items-center space-x-3 lg:space-x-6">
             {/* Book Consultation Button - Hidden on small screens, visible on sm+ */}
             <Button
               onClick={() => {
@@ -165,7 +171,7 @@ export default function Navigation({
               }}
               className="hidden sm:inline-flex premium-button text-white px-4 lg:px-8 py-2 lg:py-3 rounded-xl font-semibold text-sm tracking-wide relative z-10 font-mono"
             >
-              <span className="relative z-10">Book Consult</span>
+              <span className="relative z-10">Apply for Research</span>
             </Button>
 
             {/* Cherry Blossom Toggle Button */}
@@ -265,9 +271,7 @@ export default function Navigation({
                 }}
                 className="sm:hidden premium-button text-white w-full mt-4 py-3 font-semibold relative z-10 font-mono"
               >
-                <span className="relative z-10">
-                  Book Research Consultation
-                </span>
+                <span className="relative z-10">Apply for Research</span>
               </Button>
             </nav>
           </div>

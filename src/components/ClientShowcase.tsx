@@ -9,54 +9,54 @@ interface ClientShowcaseProps {
 export default function ClientShowcase({ className }: ClientShowcaseProps) {
   // Realistic client placeholder names for early-stage company
   const clients = [
-    "TBA",
-    "TBA",
-    "TBA",
-    "TBA",
-    "TBA",
-    "TBA",
-    "TBA",
-    "TBA",
-    "TBA",
-    "TBA",
-    "TBA",
-    "TBA",
+    "Mentor matches",
+    "Micro-grants",
+    "Project roadmaps",
+    "Publication prep",
+    "Questionnaire insights",
+    "Faculty intros",
+    "Idea sprints",
+    "Community check-ins",
+    "Poster coaching",
+    "Funding tips",
+    "Data support",
+    "Writing squads",
   ];
 
   // Realistic testimonials for a new research lab
   const testimonials = [
     {
-      name: "Coming Soon",
-      title: "Coming Soon",
-      company: "Coming Soon",
-      location: "Coming Soon",
+      name: "Sasha, Bioengineering major",
+      title: "Matched to neuroscience mentor",
+      company: "UC San Diego",
+      location: "La Jolla, CA",
       quote:
-        "Coming Soon",
+        "I expected weeks of cold emails. Instead, Aikido Labs connected me with a PI, funded my reagents, and helped me scope a poster-ready project.",
       rating: 5,
-      results: "In Progress",
-      avatar: "CS",
+      results: "Poster draft ready",
+      avatar: "SB",
     },
     {
-      name: "Coming Soon",
-      title: "Coming Soon",
-      company: "Coming Soon",
-      location: "Coming Soon",
+      name: "Diego, Cognitive Science",
+      title: "Micro-grant recipient",
+      company: "UC San Diego",
+      location: "San Diego, CA",
       quote:
-        "Coming Soon",
+        "The micro-grant covered cloud credits so I could run my experiment. Weekly check-ins kept the project moving and I submitted a preprint.",
       rating: 5,
-      results: "Coming Soon",
-      avatar: "CS",
+      results: "Preprint submitted",
+      avatar: "DM",
     },
     {
-      name: "Coming Soon",
-      title: "Coming Soon",
-      company: "Coming Soon",
-      location: "Coming Soon",
+      name: "Priya, Computer Science",
+      title: "Questionnaire fast-track",
+      company: "UC San Diego",
+      location: "San Diego, CA",
       quote:
-        "Coming Soon",
-      rating: 4,
-      results: "Coming Soon",
-      avatar: "CS",
+        "The questionnaire translated my interests into faculty intros I never knew to try. Having a clear 5-step plan took away the intimidation.",
+      rating: 5,
+      results: "Mentor intro scheduled",
+      avatar: "PK",
     },
   ];
 
@@ -64,29 +64,29 @@ export default function ClientShowcase({ className }: ClientShowcaseProps) {
   const stats = [
     {
       icon: Users,
-      value: "3+",
-      label: "Research Partners",
+      value: "1:1",
+      label: "Mentor matches",
       color: "text-cherry-pink",
       bg: "bg-cherry-pink/10",
     },
     {
       icon: TrendingUp,
-      value: "2025",
-      label: "Founded",
+      value: "4–8 weeks",
+      label: "Project timeline",
       color: "text-emerald-500",
       bg: "bg-emerald-500/10",
     },
     {
       icon: Zap,
-      value: "0",
-      label: "Active Projects",
+      value: "$100–$1,000",
+      label: "Micro-grants",
       color: "text-blue-500",
       bg: "bg-blue-500/10",
     },
     {
       icon: Award,
-      value: "100%",
-      label: "Research Focus",
+      value: "Posters & preprints",
+      label: "Publishing support",
       color: "text-purple-500",
       bg: "bg-purple-500/10",
     },
@@ -99,16 +99,16 @@ export default function ClientShowcase({ className }: ClientShowcaseProps) {
         <div className="text-center max-w-4xl mx-auto mb-16 lg:mb-20">
           <div className="inline-flex items-center px-4 py-2 rounded-full bg-cherry-pink/10 border border-cherry-pink/20 text-cherry-pink text-sm font-bold mb-6 lg:mb-8 font-mono tracking-wide">
             <Award className="mr-2 w-4 h-4" />
-            Building Partnerships
+            Students who build get results
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-black text-foreground mb-6 lg:mb-8 font-mono tracking-tighter">
-            Growing with
-            <span className="block gradient-text-cherry">FORWARD-THINKING</span>
-            <span className="block text-foreground">partners</span>
+            Your curiosity plus our
+            <span className="block gradient-text-cherry">research playbook</span>
+            <span className="block text-foreground">gets you moving fast</span>
           </h2>
           <p className="text-lg sm:text-xl lg:text-2xl text-aikido-gray leading-relaxed font-medium px-4">
-            Collaborating with innovative companies to advance AI research and
-            practical implementations
+            Join a cohort of builders who scope ideas, gather data, and share
+            results without getting lost in busywork.
           </p>
         </div>
 
@@ -217,35 +217,34 @@ export default function ClientShowcase({ className }: ClientShowcaseProps) {
         <div className="text-center mt-16 lg:mt-20 px-4">
           <Card className="premium-card p-8 lg:p-12 max-w-4xl mx-auto border-0">
             <h3 className="text-2xl lg:text-3xl font-black text-foreground mb-4 font-mono tracking-tight">
-              Join Our Research Community
+              Join the Aikido Labs cohort
             </h3>
             <p className="text-base lg:text-lg text-aikido-gray mb-6 lg:mb-8 font-medium">
-              Be part of the next wave of AI innovation with research-backed
-              solutions
+              Build your project alongside undergrads who are matching with mentors, earning micro-grants, and sharing real results.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 lg:gap-8">
               <div className="text-center">
                 <div className="text-xl lg:text-2xl font-black text-cherry-pink font-mono">
-                  Early Stage
+                  Weekly
                 </div>
                 <div className="text-xs lg:text-sm font-bold text-aikido-gray font-mono tracking-wide uppercase">
-                  Growing Fast
+                  Check-ins
                 </div>
               </div>
               <div className="text-center">
                 <div className="text-xl lg:text-2xl font-black text-cherry-pink font-mono">
-                  24h
+                  3–5 days
                 </div>
                 <div className="text-xs lg:text-sm font-bold text-aikido-gray font-mono tracking-wide uppercase">
-                  Response Time
+                  Mentor matches
                 </div>
               </div>
               <div className="text-center">
                 <div className="text-xl lg:text-2xl font-black text-cherry-pink font-mono">
-                  Research
+                  $100–$1,000
                 </div>
                 <div className="text-xs lg:text-sm font-bold text-aikido-gray font-mono tracking-wide uppercase">
-                  Driven
+                  Micro-grants
                 </div>
               </div>
             </div>

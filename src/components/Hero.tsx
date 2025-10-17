@@ -48,54 +48,56 @@ export default function Hero({ className }: HeroProps) {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-6xl mx-auto text-center">
           {/* Main Heading - Improved mobile responsiveness */}
-          <div className="mb-12 lg:mb-16 fade-in-delay-1">
-            <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black mb-6 lg:mb-8 tracking-tighter leading-none">
-              <span className="block text-foreground font-mono">AIKIDO</span>
-              <span className="block gradient-text-cherry font-mono">LABS</span>
+          <div className="mb-10 lg:mb-14 fade-in-delay-1">
+            <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-5 lg:mb-6 tracking-tight leading-tight">
+              <span className="block text-foreground font-mono">
+                Undergrads doing real research, faster.
+              </span>
             </h1>
-            <div className="flex items-center justify-center space-x-4 lg:space-x-6 mb-6 lg:mb-8">
-              <div className="h-px bg-gradient-cherry w-16 sm:w-20 lg:w-32" />
-              <div className="text-sm sm:text-base lg:text-lg font-bold text-cherry-pink font-mono tracking-[0.2em] uppercase">
-                AI Research Lab
+            <div className="flex items-center justify-center space-x-4 lg:space-x-5 mb-5 lg:mb-6">
+              <div className="h-px bg-gradient-cherry w-12 sm:w-16 lg:w-24" />
+              <div className="text-xs sm:text-sm lg:text-base font-semibold text-cherry-pink/80 tracking-[0.25em] uppercase">
+                Aikido Labs
               </div>
-              <div className="h-px bg-gradient-cherry w-16 sm:w-20 lg:w-32" />
+              <div className="h-px bg-gradient-cherry w-12 sm:w-16 lg:w-24" />
             </div>
           </div>
 
           {/* Subtitle with improved mobile padding */}
-          <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-aikido-gray max-w-4xl mx-auto mb-12 lg:mb-16 leading-relaxed fade-in-delay-2 font-medium px-4">
-            <span className="gradient-text-cherry font-bold">
-              Advancing AI to transform businesses into smart, automated,
-              intelligent organizations.
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-aikido-gray/90 max-w-3xl mx-auto mb-10 lg:mb-14 leading-relaxed fade-in-delay-2 font-medium px-4">
+            <span className="gradient-text-cherry font-semibold">
+              We make undergraduate research radically accessible by matching
+              students to mentors, funding micro-grants, and guiding them from
+              idea → execution → publication.
             </span>
           </p>
 
           {/* CTA Buttons with better mobile layout */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 lg:gap-6 mb-16 lg:mb-20 fade-in-delay-3 px-4">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 lg:gap-5 mb-16 lg:mb-18 fade-in-delay-3 px-4">
             <Button
               onClick={() => (window.location.href = "/booking")}
-              className="group premium-button text-white px-8 lg:px-10 py-4 lg:py-5 text-base lg:text-lg font-bold rounded-2xl transition-all duration-500 relative z-10 font-mono tracking-wide w-full sm:w-auto"
+              className="group premium-button text-white px-7 lg:px-9 py-3.5 lg:py-4 text-base lg:text-lg font-semibold rounded-2xl transition-all duration-500 relative z-10 tracking-wide w-full sm:w-auto"
             >
               <span className="relative z-10 flex items-center justify-center">
-                Start AI Transformation
+                Apply for Research
                 <ArrowRight className="ml-3 h-5 w-5 lg:h-6 lg:w-6 transition-transform duration-300 group-hover:translate-x-2" />
               </span>
             </Button>
 
             <Button
               variant="outline"
-              onClick={() => (window.location.href = "/research")}
-              className="group px-8 lg:px-10 py-4 lg:py-5 text-base lg:text-lg font-bold rounded-2xl border-2 border-foreground hover:bg-foreground hover:text-background transition-all duration-500 font-mono tracking-wide w-full sm:w-auto"
+              onClick={() => (window.location.href = "/policy")}
+              className="group px-7 lg:px-9 py-3.5 lg:py-4 text-base lg:text-lg font-semibold rounded-2xl border border-foreground/70 hover:bg-foreground hover:text-background transition-all duration-500 tracking-wide w-full sm:w-auto"
             >
               <Play className="mr-3 h-5 w-5 lg:h-6 lg:w-6" />
-              View Research
+              Get Matched to a Professor
             </Button>
           </div>
 
           {/* Simple founding message with mobile padding */}
           <div className="text-center fade-in-delay-4 px-4">
-            <p className="text-base lg:text-lg text-muted-foreground font-medium">
-              AI Research Lab • Founded 2025
+            <p className="text-sm lg:text-base text-muted-foreground/90 font-medium">
+              Questions? hello@aikidolab.org
             </p>
           </div>
         </div>

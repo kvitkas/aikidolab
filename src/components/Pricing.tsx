@@ -2,16 +2,15 @@ import { cn } from "@/lib/utils";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import {
-  Check,
-  Zap,
-  Crown,
-  Rocket,
   ArrowRight,
-  Sparkles,
   Brain,
-  Users,
+  Check,
   Clock,
+  Crown,
   Shield,
+  Sparkles,
+  Users,
+  Zap,
 } from "lucide-react";
 
 interface PricingProps {
@@ -21,65 +20,58 @@ interface PricingProps {
 export default function Pricing({ className }: PricingProps) {
   const pricingPlans = [
     {
-      name: "Starter",
-      description: "Perfect for small businesses exploring AI",
-      price: "TBA",
-      period: "contact for pricing",
+      name: "Mentor Match",
+      description: "Warm introductions to professors and graduate mentors",
+      price: "$0",
+      period: "included with your application",
+      originalPrice: "",
+      icon: Users,
+      highlight: false,
+      features: [
+        "Matches based on major, year, and interests",
+        "Context email drafted for you",
+        "Example project scope to share",
+        "Follow-up checklist after each intro",
+        "Option to request additional labs",
+      ],
+      cta: "Get Matched!",
+      badge: "Included",
+    },
+    {
+      name: "Micro-Grant Boost",
+      description: "$100–$1,000 to cover software, datasets, and materials",
+      price: "$0",
+      period: "awarded in rolling cycles",
       originalPrice: "",
       icon: Zap,
-      highlight: false,
-      features: [
-        "Custom AI consultation",
-        "Basic automation setup",
-        "Integration support",
-        "30-day implementation",
-        "Email support",
-        "Performance analytics",
-      ],
-      cta: "Start AI Journey",
-      badge: "Most Popular",
-    },
-    {
-      name: "Professional",
-      description: "Advanced AI solutions for growing companies",
-      price: "TBA",
-      period: "contact for pricing",
-      originalPrice: "",
-      icon: Crown,
       highlight: true,
       features: [
-        "Everything in Starter",
-        "Advanced AI models",
-        "Multi-system integration",
-        "24/7 priority support",
-        "Dedicated research team",
-        "Continuous optimization",
-        "Custom model training",
-        "Performance guarantees",
+        "Fast approval in 3–5 days",
+        "Use for cloud credits, consumables, data",
+        "Budget template and accountability plan",
+        "Purchase tracking support",
+        "Renewable for follow-on experiments",
       ],
-      cta: "Scale with AI",
-      badge: "Best Value",
+      cta: "Request Micro-Grant",
+      badge: "Student Favorite",
     },
     {
-      name: "Enterprise",
-      description: "Full AI transformation for large organizations",
-      price: "TBA",
-      period: "tailored pricing",
+      name: "Publishing Support",
+      description: "Guidance from results to posters, preprints, or journals",
+      price: "$0",
+      period: "available once you have data",
       originalPrice: "",
-      icon: Rocket,
+      icon: Crown,
       highlight: false,
       features: [
-        "Everything in Professional",
-        "White-label solutions",
-        "On-premise deployment",
-        "Dedicated infrastructure",
-        "Custom research projects",
-        "Executive training",
-        "SLA guarantees",
-        "Global support",
+        "Outline reviews and writing sprints",
+        "Poster and slide templates",
+        "Submission calendar reminders",
+        "Peer feedback from your cohort",
+        "Warm intros to student conferences",
       ],
-      cta: "Contact Sales",
-      badge: "Enterprise",
+      cta: "See Publishing Help",
+      badge: "Included",
     },
   ];
 
@@ -100,20 +92,19 @@ export default function Pricing({ className }: PricingProps) {
         <div className="text-center max-w-4xl mx-auto mb-20">
           <div className="inline-flex items-center px-4 py-2 rounded-full bg-cherry-pink/10 border border-cherry-pink/20 text-cherry-pink text-sm font-bold mb-8 font-mono tracking-wide">
             <Sparkles className="mr-2 w-4 h-4" />
-            Transparent Pricing
+            Funding & support included
           </div>
           <div className="mb-8">
             <div className="text-lg font-bold text-aikido-gray mb-4 font-mono tracking-wide">
-              What could cost you $100,000+ is now
+              Research shouldn’t require guesswork or hidden fees
             </div>
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-foreground font-mono tracking-tighter">
-              ACCESSIBLE TO
-              <span className="block gradient-text-cherry">EVERYONE</span>
+              Everything you need to
+              <span className="block gradient-text-cherry">launch and publish</span>
             </h2>
           </div>
           <p className="text-xl lg:text-2xl text-aikido-gray leading-relaxed font-medium">
-            Choose the perfect AI transformation package for your business size
-            and goals
+            Pick the support you need right now. Apply once—unlock all three.
           </p>
         </div>
 
@@ -172,22 +163,16 @@ export default function Pricing({ className }: PricingProps) {
 
                   {/* Price */}
                   <div className="mb-6">
-                    {plan.price === "TBA" ? (
-                      <div className="text-4xl font-black text-cherry-pink font-mono">
-                        TBA
-                      </div>
-                    ) : (
-                      <div className="flex items-baseline justify-center space-x-2">
-                        {plan.originalPrice && (
-                          <span className="text-sm font-bold text-aikido-gray line-through">
-                            ${plan.originalPrice}
-                          </span>
-                        )}
-                        <span className="text-4xl font-black text-foreground font-mono">
-                          ${plan.price}
+                    <div className="flex items-baseline justify-center space-x-2">
+                      {plan.originalPrice && (
+                        <span className="text-sm font-bold text-aikido-gray line-through">
+                          {plan.originalPrice}
                         </span>
-                      </div>
-                    )}
+                      )}
+                      <span className="text-4xl font-black text-foreground font-mono">
+                        {plan.price}
+                      </span>
+                    </div>
                     <div className="text-sm font-bold text-aikido-gray font-mono tracking-wide">
                       {plan.period}
                     </div>
@@ -236,10 +221,10 @@ export default function Pricing({ className }: PricingProps) {
               <Brain className="w-6 h-6 text-cherry-pink" />
             </div>
             <h4 className="font-black text-foreground mb-2 font-mono tracking-tight">
-              AI Research Included
+              Project templates
             </h4>
             <p className="text-sm text-aikido-gray font-medium">
-              Access to cutting-edge research and models
+              Checklists, outlines, and examples so you never start from scratch.
             </p>
           </div>
 
@@ -248,10 +233,10 @@ export default function Pricing({ className }: PricingProps) {
               <Users className="w-6 h-6 text-emerald-500" />
             </div>
             <h4 className="font-black text-foreground mb-2 font-mono tracking-tight">
-              Expert Team
+              Mentor cohort
             </h4>
             <p className="text-sm text-aikido-gray font-medium">
-              Dedicated AI researchers and engineers
+              Faculty, grad students, and peers who give warm feedback each week.
             </p>
           </div>
 
@@ -260,10 +245,10 @@ export default function Pricing({ className }: PricingProps) {
               <Clock className="w-6 h-6 text-blue-500" />
             </div>
             <h4 className="font-black text-foreground mb-2 font-mono tracking-tight">
-              Fast Implementation
+              Fast starts
             </h4>
             <p className="text-sm text-aikido-gray font-medium">
-              AI solutions deployed in weeks, not months
+              Micro-grants approved within days so you can order supplies quickly.
             </p>
           </div>
 
@@ -272,10 +257,10 @@ export default function Pricing({ className }: PricingProps) {
               <Shield className="w-6 h-6 text-purple-500" />
             </div>
             <h4 className="font-black text-foreground mb-2 font-mono tracking-tight">
-              Enterprise Security
+              Guided publishing
             </h4>
             <p className="text-sm text-aikido-gray font-medium">
-              SOC 2 compliant with full data protection
+              Editing support and submission prep when you’re ready to share results.
             </p>
           </div>
         </div>

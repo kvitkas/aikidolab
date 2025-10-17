@@ -1,0 +1,114 @@
+{
+  "id": "aikido_questionnaire_v1",
+  "title": "Aikido Labs Questionnaire",
+  "version": 1,
+  "sections": [
+    {
+      "id": "basics",
+      "title": "Basics",
+      "fields": [
+        {"id": "firstName", "label": "First name", "type": "text", "required": true},
+        {"id": "lastName", "label": "Last name", "type": "text", "required": true},
+        {"id": "email", "label": "Email", "type": "email", "required": true},
+        {"id": "university", "label": "University", "type": "text", "required": true},
+        {"id": "major", "label": "Major", "type": "select", "options": ["Neurobiology","Cognitive Science","Computer Science","Bioengineering","Biology","Other"], "required": true},
+        {"id": "year", "label": "Year", "type": "select", "options": ["1","2","3","4","5+"], "required": true},
+        {"id": "gpa", "label": "GPA (optional)", "type": "text", "required": false}
+      ]
+    },
+    {
+      "id": "experience",
+      "title": "Experience",
+      "fields": [
+        {
+          "id": "experienceLevel",
+          "label": "Research experience",
+          "type": "radio",
+          "options": [
+            "I’m new—never done research",
+            "I’ve helped on a project",
+            "I’ve led a project / have data",
+            "I’m ready to publish"
+          ],
+          "required": true
+        },
+        {"id": "priorLab", "label": "If any, prior lab or mentor", "type": "text"}
+      ]
+    },
+    {
+      "id": "interests",
+      "title": "Interests",
+      "fields": [
+        {
+          "id": "broadTopics",
+          "label": "Broad topics",
+          "type": "checkbox",
+          "options": ["AI/ML","Neuroscience","Bioinformatics","Robotics","HCI","Cognitive Science","Psychology","Public Health","Genomics","Systems Biology","Materials","Climate/Environmental"],
+          "required": true,
+          "min": 1,
+          "max": 5
+        }
+      ],
+      "conditional": [
+        {
+          "when": {"field": "broadTopics", "includes": "AI/ML"},
+          "add": {
+            "fields": [
+              {"id": "aiNiches", "label": "AI/ML niches", "type": "chips", "options": ["ML for healthcare","Reinforcement learning","Computer vision","NLP","Causal inference","Edge ML"]}
+            ]
+          }
+        },
+        {
+          "when": {"field": "broadTopics", "includes": "Neuroscience"},
+          "add": {
+            "fields": [
+              {"id": "neuroNiches", "label": "Neuroscience niches", "type": "chips", "options": ["Two-photon imaging","Calcium imaging analysis","BCI","Neurodegeneration","Behavior analysis"]}
+            ]
+          }
+        },
+        {
+          "when": {"field": "broadTopics", "includes": "Bioinformatics"},
+          "add": {
+            "fields": [
+              {"id": "bioinfoNiches", "label": "Bioinformatics niches", "type": "chips", "options": ["Variant calling","Gene expression","Single-cell","Genomic language models (gLMs)","CRISPR screens"]}
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "skills",
+      "title": "Skills",
+      "fields": [
+        {"id": "skillsList", "label": "Methods/tools you can use", "type": "tags", "placeholder": "Python, R, MATLAB, wet lab, stats, imaging..."}
+      ]
+    },
+    {
+      "id": "support",
+      "title": "Support",
+      "fields": [
+        {"id": "needsFunding", "label": "Do you need a micro-grant?", "type": "checkbox", "options": ["Software","Cloud credits","Datasets","Materials/consumables"]},
+        {"id": "needsIntro", "label": "Would you like faculty introductions?", "type": "boolean"}
+      ]
+    },
+    {
+      "id": "timeline",
+      "title": "Timeline",
+      "fields": [
+        {"id": "hoursPerWeek", "label": "Hours/week", "type": "select", "options": ["3–5","5–8","8–12","12+"], "required": true},
+        {"id": "startDate", "label": "Preferred start date", "type": "date", "required": false}
+      ]
+    },
+    {
+      "id": "optionalIdea",
+      "title": "Optional idea",
+      "fields": [
+        {"id": "idea", "label": "Initial idea (optional)", "type": "textarea", "placeholder": "If you have a seed idea, write 2–3 sentences."}
+      ]
+    }
+  ],
+  "postSubmit": {
+    "showProfessorMatches": true,
+    "nextRoutes": ["/matches","/funding-and-intros"]
+  }
+}

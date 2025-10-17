@@ -1,0 +1,17 @@
+{
+  "applicationSubmitted": {
+    "title": "Application submitted",
+    "message": "Thanks! We’ll review your info and email matches within 3–5 days.",
+    "next": "Next: Complete the Questionnaire to speed up matching."
+  },
+  "microGrantRequested": {
+    "title": "Micro-grant request submitted",
+    "message": "Got it. We’ll follow up with a short approval or clarifying questions.",
+    "next": ""
+  },
+  "facultyIntroRequested": {
+    "title": "Faculty intro requested",
+    "message": "We’ll send a warm intro with your background and interests. Expect an email soon.",
+    "next": ""
+  }
+}

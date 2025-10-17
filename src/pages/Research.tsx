@@ -5,76 +5,107 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import {
-  Brain,
-  Cpu,
-  Database,
-  Network,
-  Zap,
-  Target,
   ArrowRight,
-  CheckCircle,
-  TrendingUp,
-  Activity,
-  Star,
-  Award,
-  Beaker,
-  FileText,
-  ExternalLink,
-  Download,
-  Users,
-  Calendar,
-  Microscope,
   BookOpen,
-  Lightbulb,
-  Rocket,
-  ChevronRight,
-  Play,
-  Code,
+  CheckCircle,
   FlaskConical,
-  GitBranch,
-  Timer,
   Globe,
   Layers,
+  Lightbulb,
+  Play,
+  Rocket,
   Sparkles,
+  Target,
+  Users,
 } from "lucide-react";
 import { useState } from "react";
 
 const Research = () => {
-  const [activeResearchTab, setActiveResearchTab] = useState("current");
   const [cherryBlossomEnabled, setCherryBlossomEnabled] = useState(true);
-
-  const researchAreas = [
-    {
-      icon: Microscope,
-      title: "TBA",
-      description: "Coming Soon...",
-      progress: 0,
-      timeline: "xxx",
-      status: "xxx",
-      team: ["xxx", "xxx"],
-      technologies: ["xxx", "xxx", "xxx"],
-      impact: "xxx",
-      difficulty: "xxx",
-    },
-  ];
 
   const publications = [
     {
-      title: "Soon...",
-      status: "Soon...",
-      journal: "Soon...",
-      date: "2025 Q2",
-      authors: "Soon...",
-      type: "Soon...",
-      abstract: "Soon...",
+      title: "Step 1: Pick a direction",
+      status: "In Progress",
+      journal: "Choose a broad field you’re curious about.",
+      date: "Outcome: a simple focus statement.",
+      authors: "Skim interests, courses, and labs you admire.",
+      type: "Step 1",
+      abstract: "Start with curiosity. One or two sentences about what excites you is enough to begin.",
+    },
+    {
+      title: "Step 2: Scan the field",
+      status: "In Progress",
+      journal: "Read 5–10 recent papers or posters.",
+      date: "Outcome: notes on methods and open questions.",
+      authors: "Look for repeat methods, gaps, or datasets you can access.",
+      type: "Step 2",
+      abstract:
+        "Skim abstracts, highlight key methods, and write one takeaway per paper. You’re hunting for patterns.",
+    },
+    {
+      title: "Step 3: Define a tiny project",
+      status: "In Progress",
+      journal: "Scope something you can run in 4–8 weeks.",
+      date: "Outcome: one testable idea plus success metric.",
+      authors: "Use our templates to frame a small, clear question.",
+      type: "Step 3",
+      abstract:
+        "Shrink the ambition: what can you test quickly with tools you already know? We sanity-check this with you.",
+    },
+    {
+      title: "Step 4: Find a mentor",
+      status: "In Progress",
+      journal: "We send warm intros with your context and project scope.",
+      date: "Outcome: a meeting on the calendar.",
+      authors: "Faculty, grad students, or research staff who align with your topic.",
+      type: "Step 4",
+      abstract:
+        "We package your interests, availability, and draft project so mentors can say yes faster.",
+    },
+    {
+      title: "Step 5: Run → analyze → share",
+      status: "In Progress",
+      journal: "Execute, review data with us, and polish your story.",
+      date: "Outcome: poster, preprint, or submission.",
+      authors: "We co-create timelines, figure drafts, and feedback loops.",
+      type: "Step 5",
+      abstract:
+        "Weekly check-ins keep momentum. We guide you through analysis, writing, and sharing your results.",
     },
   ];
 
   const researchMetrics = [
-    { label: "Active Projects", value: "0", trend: "+0", icon: Rocket },
-    { label: "Publications", value: "0", trend: "+0", icon: FileText },
-    { label: "Research Hours", value: "0", trend: "+0", icon: Timer },
-    { label: "Collaborations", value: "0", trend: "+0", icon: Users },
+    {
+      label: "Pick a direction",
+      value: "Step 1",
+      trend: "Choose a broad area you’re curious about.",
+      icon: Lightbulb,
+    },
+    {
+      label: "Scan the field",
+      value: "Step 2",
+      trend: "Read 5–10 papers and note methods or open questions.",
+      icon: BookOpen,
+    },
+    {
+      label: "Define a tiny project",
+      value: "Step 3",
+      trend: "Frame one testable idea you can run in 4–8 weeks.",
+      icon: Target,
+    },
+    {
+      label: "Find a mentor",
+      value: "Step 4",
+      trend: "We send warm intros and share your project scope.",
+      icon: Users,
+    },
+    {
+      label: "Run → analyze → share",
+      value: "Step 5",
+      trend: "Execute with weekly check-ins and finish with a poster or preprint.",
+      icon: Rocket,
+    },
   ];
 
   const getStatusColor = (status: string) => {
@@ -89,19 +120,6 @@ const Research = () => {
         return "bg-orange-500/10 text-orange-500 border-orange-500/20";
       default:
         return "bg-gray-500/10 text-gray-500 border-gray-500/20";
-    }
-  };
-
-  const getImpactColor = (impact: string) => {
-    switch (impact) {
-      case "Revolutionary":
-        return "text-red-500";
-      case "High":
-        return "text-orange-500";
-      case "Medium":
-        return "text-yellow-500";
-      default:
-        return "text-gray-500";
     }
   };
 
@@ -123,33 +141,31 @@ const Research = () => {
               <div>
                 <Badge className="mb-6 bg-cherry-pink/10 text-cherry-pink border-cherry-pink/20 font-mono">
                   <FlaskConical className="w-4 h-4 mr-2" />
-                  Research Lab
+                  How research works
                 </Badge>
                 <h1 className="text-6xl lg:text-7xl font-black text-foreground mb-8 tracking-tighter">
-                  PUSHING
-                  <span className="block gradient-text-cherry">BOUNDARIES</span>
-                  <span className="block text-4xl lg:text-5xl text-muted-foreground">
-                    in AI Research
+                  How research works
+                  <span className="block gradient-text-cherry">
+                    (the simple version)
                   </span>
                 </h1>
                 <p className="text-xl text-muted-foreground leading-relaxed mb-12 max-w-lg">
-                  Where cutting-edge research meets practical innovation. We're
-                  building the AI systems of tomorrow, today.
+                  No jargon. Clear steps. You’ve got this. New to research? Start with our questionnaire. Already have data? We can help you analyze and publish.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Button
-                    onClick={() => setActiveResearchTab("current")}
+                    onClick={() => (window.location.href = "/tos")}
                     className="premium-button text-white px-8 py-4 font-bold rounded-xl font-mono"
                   >
                     <Play className="w-5 h-5 mr-2" />
-                    Explore Research
+                    Start Questionnaire
                   </Button>
                   <Button
                     variant="outline"
-                    onClick={() => (window.location.href = "/booking")}
+                    onClick={() => (window.location.href = "/policy")}
                     className="px-8 py-4 font-bold rounded-xl border-2 font-mono"
                   >
-                    Collaborate With Us
+                    Get Faculty Intro
                     <ArrowRight className="w-5 h-5 ml-2" />
                   </Button>
                 </div>
@@ -173,7 +189,7 @@ const Research = () => {
                         {metric.label}
                       </div>
                       <div className="text-xs text-green-500 font-bold mt-1">
-                        {metric.trend} this quarter
+                        {metric.trend}
                       </div>
                     </Card>
                   );
@@ -188,10 +204,10 @@ const Research = () => {
           <div className="container mx-auto px-4 sm:px-6">
             <div className="text-center mb-16">
               <h2 className="text-5xl font-black text-foreground mb-6 font-mono tracking-tight">
-                Publication Pipeline
+                The 5-step research starter
               </h2>
               <p className="text-xl text-muted-foreground">
-                Research papers advancing the field of artificial intelligence
+                Follow this sequence and you’ll move from idea to shareable results without getting stuck.
               </p>
             </div>
 
@@ -219,7 +235,7 @@ const Research = () => {
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
                           <div>
                             <span className="font-bold text-foreground">
-                              Journal:
+                              Action:
                             </span>
                             <div className="text-cherry-pink font-bold">
                               {paper.journal}
@@ -227,7 +243,7 @@ const Research = () => {
                           </div>
                           <div>
                             <span className="font-bold text-foreground">
-                              Authors:
+                              Focus:
                             </span>
                             <div className="text-muted-foreground">
                               {paper.authors}
@@ -235,7 +251,7 @@ const Research = () => {
                           </div>
                           <div>
                             <span className="font-bold text-foreground">
-                              Expected:
+                              Outcome:
                             </span>
                             <div className="text-muted-foreground">
                               {paper.date}
@@ -257,7 +273,7 @@ const Research = () => {
                             disabled
                           >
                             <BookOpen className="w-4 h-4 mr-2" />
-                            Preview
+                            Template coming soon
                           </Button>
                         </div>
                       </div>
@@ -277,24 +293,22 @@ const Research = () => {
                 <div>
                   <Badge className="mb-6 bg-cherry-pink/10 text-cherry-pink border-cherry-pink/20 font-mono">
                     <Sparkles className="w-4 h-4 mr-2" />
-                    Our Approach
+                    Week-by-week support
                   </Badge>
                   <h2 className="text-5xl font-black text-foreground mb-8 font-mono tracking-tight">
-                    Research
+                    How we help you
                     <span className="block gradient-text-cherry">
-                      Philosophy
+                      finish strong
                     </span>
                   </h2>
                   <p className="text-xl text-muted-foreground leading-relaxed mb-8">
-                    We believe in open, collaborative, and ethical research that
-                    pushes the boundaries of what's possible while maintaining
-                    responsibility for societal impact.
+                    Every student gets a mentor intro, a checklist, and fast answers. Our job is to unblock you so you can ship real work.
                   </p>
                   <Button
                     onClick={() => (window.location.href = "/about")}
                     className="premium-button text-white px-8 py-4 font-bold rounded-xl font-mono"
                   >
-                    Learn About Our Team
+                    See What We Do
                     <ArrowRight className="w-5 h-5 ml-2" />
                   </Button>
                 </div>
@@ -306,12 +320,11 @@ const Research = () => {
                         <CheckCircle className="w-6 h-6 text-green-500" />
                       </div>
                       <h3 className="text-lg font-black text-foreground font-mono">
-                        Open Science
+                        Weekly check-ins
                       </h3>
                     </div>
                     <p className="text-muted-foreground">
-                      Transparent methodologies and reproducible research for
-                      the global community
+                      Short syncs and async feedback keep you accountable without derailing your schedule.
                     </p>
                   </Card>
 
@@ -321,12 +334,11 @@ const Research = () => {
                         <Globe className="w-6 h-6 text-blue-500" />
                       </div>
                       <h3 className="text-lg font-black text-foreground font-mono">
-                        Global Impact
+                        Templates & examples
                       </h3>
                     </div>
                     <p className="text-muted-foreground">
-                      Research that addresses real-world challenges and benefits
-                      all of humanity
+                      Use our literature review, experiment, and poster templates so you’re never starting from scratch.
                     </p>
                   </Card>
 
@@ -336,12 +348,11 @@ const Research = () => {
                         <Layers className="w-6 h-6 text-purple-500" />
                       </div>
                       <h3 className="text-lg font-black text-foreground font-mono">
-                        Interdisciplinary
+                        Realistic scope
                       </h3>
                     </div>
                     <p className="text-muted-foreground">
-                      Combining insights from multiple fields to create
-                      breakthrough innovations
+                      We keep projects tiny and doable so you see results in 4–8 weeks and build confidence for the next step.
                     </p>
                   </Card>
                 </div>

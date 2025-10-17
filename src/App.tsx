@@ -21,7 +21,7 @@ import { useEffect } from "react";
 
 // Page imports
 import Index from "./pages/Index";
-import About from "./pages/About";
+import WhatWeDo from "./pages/WhatWeDo";
 import Research from "./pages/Research";
 import Booking from "./pages/Booking";
 import Policy from "./pages/Policy";
@@ -82,7 +82,8 @@ const App = () => (
           <Route path="/" element={<Index />} />
 
           {/* Dedicated pages */}
-          <Route path="/about" element={<About />} />
+          <Route path="/about" element={<WhatWeDo />} />
+          <Route path="/what-we-do" element={<WhatWeDo />} />
           <Route path="/research" element={<Research />} />
           <Route path="/booking" element={<Booking />} />
 

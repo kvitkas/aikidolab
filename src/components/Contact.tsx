@@ -14,7 +14,6 @@ import {
 } from "@/components/ui/select";
 import {
   Calendar,
-  Clock,
   Mail,
   MapPin,
   Send,
@@ -43,18 +42,18 @@ export default function Contact({ className }: ContactProps) {
     e.preventDefault();
     // Update Email for "Send Message" button
     const emailSubject = encodeURIComponent(
-      `Contact from ${formData.name} - ${formData.company}`,
+      `Contact from ${formData.name}`,
     );
     const emailBody = encodeURIComponent(`
 Name: ${formData.name}
 Email: ${formData.email}
-Company: ${formData.company}
-Project Type: ${formData.projectType}
-Budget: ${formData.budget}
+School or program: ${formData.company}
+Support needed: ${formData.projectType}
+Timeline or funding notes: ${formData.budget}
 Message: ${formData.message}
     `);
     window.open(
-      `mailto:nvenna@4ikido.com?subject=${emailSubject}&body=${emailBody}`,
+      `mailto:hello@aikidolab.org?subject=${emailSubject}&body=${emailBody}`,
     );
     setIsSubmitted(true);
     setTimeout(() => setIsSubmitted(false), 3000);
@@ -67,19 +66,19 @@ Message: ${formData.message}
   const contactMethods = [
     {
       icon: Calendar,
-      title: "Schedule Research Consult",
-      description: "Book a 30-minute AI strategy session",
-      action: "Schedule Now",
+      title: "Apply for Research",
+      description: "Submit the application to unlock mentor matches and funding.",
+      action: "Apply Now",
       highlight: true,
-      feature: "Free AI Assessment",
+      feature: "Primary CTA",
     },
     {
       icon: Mail,
       title: "Email Our Team",
-      description: "nvenna@4ikido.com",
-      action: "Send Email",
+      description: "hello@aikidolab.org",
+      action: "Email Us",
       highlight: false,
-      feature: "24h Response",
+      feature: "Replies in 1 business day",
     },
   ];
 
@@ -93,15 +92,14 @@ Message: ${formData.message}
         <div className="text-center max-w-4xl mx-auto mb-20">
           <div className="inline-flex items-center px-4 py-2 rounded-full bg-cherry-pink/10 border border-cherry-pink/20 text-cherry-pink text-sm font-bold mb-8 font-mono tracking-wide">
             <Sparkles className="w-4 h-4 mr-2" />
-            Ready to scale with AI?
+            Need a nudge to start?
           </div>
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-foreground mb-8 font-mono tracking-tighter">
-            Let's build the
-            <span className="block gradient-text-cherry">FUTURE TOGETHER</span>
+            Let’s map your
+            <span className="block gradient-text-cherry">research path</span>
           </h2>
           <p className="text-xl lg:text-2xl text-aikido-gray leading-relaxed font-medium">
-            Schedule a consultation with our AI research team and discover how
-            Aikido Labs can transform your business with cutting-edge automation
+            Reach out if you want feedback on your idea, need a mentor intro, or have a data question. We’ll point you to the right next step.
           </p>
         </div>
 
@@ -113,8 +111,7 @@ Message: ${formData.message}
                 Get in touch
               </h3>
               <p className="text-aikido-gray mb-8 leading-relaxed font-medium text-lg">
-                Choose the best way to connect with our research team. We're
-                here to help you leverage AI for unprecedented business growth.
+                Pick what you need right now. We’ll meet you where you are—brand new or ready to publish.
               </p>
             </div>
 
@@ -186,10 +183,10 @@ Message: ${formData.message}
                       </div>
                       <Button
                         onClick={() => {
-                          if (method.title === "Schedule Research Consult") {
+                          if (method.title === "Apply for Research") {
                             window.location.href = "/booking";
                           } else if (method.title === "Email Our Team") {
-                            window.open("mailto:nvenna@4ikido.com");
+                            window.open("mailto:hello@aikidolab.org");
                           }
                         }}
                         variant={method.highlight ? "secondary" : "ghost"}
@@ -216,16 +213,16 @@ Message: ${formData.message}
                 </div>
                 <div>
                   <h4 className="text-lg font-black text-foreground mb-2 font-mono">
-                    Research Lab Location
+                    Quick Facts
                   </h4>
                   <div className="space-y-3 text-sm text-aikido-gray font-medium">
                     <div className="flex items-center space-x-3">
-                      <Clock className="w-4 h-4" />
-                      <span>Response time: Within 24 hours</span>
+                      <Mail className="w-4 h-4" />
+                      <span>hello@aikidolab.org — we reply within 24 hours</span>
                     </div>
                     <div className="flex items-center space-x-3">
                       <MapPin className="w-4 h-4" />
-                      <span>San Diego, CA • Serving globally</span>
+                      <span>Based in San Diego, supporting undergrads everywhere</span>
                     </div>
                   </div>
                 </div>
@@ -238,10 +235,10 @@ Message: ${formData.message}
             <form onSubmit={handleSubmit} className="space-y-8">
               <div>
                 <h3 className="text-2xl font-black text-foreground mb-2 font-mono tracking-tight">
-                  Send us a message
+                  Send us a note
                 </h3>
                 <p className="text-aikido-gray font-medium">
-                  Tell us about your AI transformation goals
+                  Share what you’re trying to build and we’ll respond with next steps.
                 </p>
               </div>
 
@@ -251,13 +248,13 @@ Message: ${formData.message}
                     htmlFor="name"
                     className="text-foreground font-bold font-mono text-sm tracking-wide"
                   >
-                    Full Name *
+                    Name *
                   </Label>
                   <Input
                     id="name"
                     value={formData.name}
                     onChange={(e) => handleInputChange("name", e.target.value)}
-                    placeholder="John Doe"
+                    placeholder="First and last name"
                     required
                     className="border-border focus:border-cherry-pink h-12 font-medium"
                   />
@@ -274,7 +271,7 @@ Message: ${formData.message}
                     type="email"
                     value={formData.email}
                     onChange={(e) => handleInputChange("email", e.target.value)}
-                    placeholder="john@company.com"
+                    placeholder="you@university.edu"
                     required
                     className="border-border focus:border-cherry-pink h-12 font-medium"
                   />
@@ -286,13 +283,13 @@ Message: ${formData.message}
                   htmlFor="company"
                   className="text-foreground font-bold font-mono text-sm tracking-wide"
                 >
-                  Company
+                  School or program
                 </Label>
                 <Input
                   id="company"
                   value={formData.company}
                   onChange={(e) => handleInputChange("company", e.target.value)}
-                  placeholder="Your Company Name"
+                  placeholder="e.g., UC San Diego, biology program"
                   className="border-border focus:border-cherry-pink h-12 font-medium"
                 />
               </div>
@@ -300,7 +297,7 @@ Message: ${formData.message}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div className="space-y-3">
                   <Label className="text-foreground font-bold font-mono text-sm tracking-wide">
-                    Project Type
+                    What support do you need?
                   </Label>
                   <Select
                     value={formData.projectType}
@@ -309,22 +306,26 @@ Message: ${formData.message}
                     }
                   >
                     <SelectTrigger className="border-border focus:border-cherry-pink h-12 font-medium">
-                      <SelectValue placeholder="Select project type" />
+                      <SelectValue placeholder="Choose support type" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="automation">
-                        Business Automation
+                      <SelectItem value="mentor">
+                        Mentor match
                       </SelectItem>
-                      <SelectItem value="research">AI Research</SelectItem>
-                      <SelectItem value="consulting">AI Consulting</SelectItem>
-                      <SelectItem value="custom">Custom Development</SelectItem>
-                      <SelectItem value="other">Other</SelectItem>
+                      <SelectItem value="microgrant">Micro-grant</SelectItem>
+                      <SelectItem value="analysis">
+                        Help analyzing data
+                      </SelectItem>
+                      <SelectItem value="publishing">
+                        Publishing support
+                      </SelectItem>
+                      <SelectItem value="other">Something else</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
                 <div className="space-y-3">
                   <Label className="text-foreground font-bold font-mono text-sm tracking-wide">
-                    Budget Range
+                    Timeline or funding notes
                   </Label>
                   <Select
                     value={formData.budget}
@@ -333,10 +334,17 @@ Message: ${formData.message}
                     }
                   >
                     <SelectTrigger className="border-border focus:border-cherry-pink h-12 font-medium">
-                      <SelectValue placeholder="Select budget" />
+                      <SelectValue placeholder="Share timing" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="discuss">Let's discuss</SelectItem>
+                      <SelectItem value="asap">Ready to start ASAP</SelectItem>
+                      <SelectItem value="semester">
+                        Planning for this quarter/semester
+                      </SelectItem>
+                      <SelectItem value="funding">
+                        Need funding details first
+                      </SelectItem>
+                      <SelectItem value="unsure">Still figuring it out</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
@@ -344,16 +352,16 @@ Message: ${formData.message}
 
               <div className="space-y-3">
                 <Label
-                  htmlFor="message"
-                  className="text-foreground font-bold font-mono text-sm tracking-wide"
+                    htmlFor="message"
+                    className="text-foreground font-bold font-mono text-sm tracking-wide"
                 >
-                  Project Details *
+                  What should we know? *
                 </Label>
                 <Textarea
                   id="message"
                   value={formData.message}
                   onChange={(e) => handleInputChange("message", e.target.value)}
-                  placeholder="Tell us about your AI transformation goals, current challenges, and how we can help..."
+                  placeholder="Share your idea, experience level, and how we can help you move forward."
                   rows={5}
                   required
                   className="border-border focus:border-cherry-pink resize-none font-medium"
@@ -368,12 +376,12 @@ Message: ${formData.message}
                 {isSubmitted ? (
                   <div className="flex items-center justify-center space-x-3">
                     <CheckCircle className="w-6 h-6" />
-                    <span className="relative z-10">Message Sent!</span>
+                    <span className="relative z-10">Note sent!</span>
                   </div>
                 ) : (
                   <div className="flex items-center justify-center space-x-3">
                     <Send className="w-6 h-6" />
-                    <span className="relative z-10">Send Message</span>
+                    <span className="relative z-10">Send Note</span>
                   </div>
                 )}
               </Button>
